@@ -18,7 +18,7 @@
     
     - name: Lag Brukar2
       ansible.builtin.user:
-        name: Brukar1
+        name: Brukar2
         group: TestGruppe
         state: present
         password: "{{ 'Admin123' | password_hash('sha512') }}"
@@ -28,3 +28,4 @@
         name: cowsay
         state: present
         update_cache: yes
+
