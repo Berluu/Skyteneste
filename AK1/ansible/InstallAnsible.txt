@@ -1,0 +1,27 @@
+## copypaste basic ansible til AK1
+
+sudo apt update -y
+
+sudo apt install python3 python3-pip -y
+sudo apt install ansible -y
+
+
+mkdir ansible
+cd ansible
+touch ansible.cfg
+touch hosts
+mkdir playbooks
+touch playbooks/playbook.yml
+
+
+ssh-keygen -t ed25519 -C "ansible-controller"
+ssh-copy-id adminuser@172.16.2.4
+
+ansible-playbook playbooks/playbook.yml
+
+ssh adminuser@172.16.2.4
+
+#Sjekke at ting funka:
+cat /etc/group
+cat /etc/passwd
+cowsay Heiheii

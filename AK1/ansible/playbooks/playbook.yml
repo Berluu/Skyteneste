@@ -1,0 +1,30 @@
+---
+- name: Lage brukara, gruppe, og installere eit program.
+  hosts: VM2
+  become: yes
+  tasks:
+
+    - name: Lag gruppe
+      ansible.builtin.group:
+        name: TestGruppe
+        state: present
+
+    - name: Lag Brukar1
+      ansible.builtin.user:
+        name: Brukar1
+        group: TestGruppe
+        state: present
+        password: "{{ 'Admin123' | password_hash('sha512') }}"
+    
+    - name: Lag Brukar2
+      ansible.builtin.user:
+        name: Brukar1
+        group: TestGruppe
+        state: present
+        password: "{{ 'Admin123' | password_hash('sha512') }}"
+
+    - name: Installer cowsay
+      ansible.builtin.apt:
+        name: cowsay
+        state: present
+        update_cache: yes
