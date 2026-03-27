@@ -1,0 +1,13 @@
+Fjerne known hosts :
+ssh-keygen -f '/home/berelv/.ssh/known_hosts' -R '192.168.1.4'
+ssh-keygen -f '/home/berelv/.ssh/known_hosts' -R '192.168.1.5'
+
+
+
+ssh-copy-id berelv@192.168.1.4
+ssh-copy-id berelv@192.168.1.5
+
+curl http://192.168.1.4
+curl http://192.168.1.5
+
+192.168.1.0/24
