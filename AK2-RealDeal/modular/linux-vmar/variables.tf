@@ -16,7 +16,6 @@ variable "VMnic_namn" {
     type        = list(string)
 }
 
-
 variable "subnet_ids" {
     description = "subnet id"
     type        = map(string)

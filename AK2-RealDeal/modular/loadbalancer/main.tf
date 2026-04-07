@@ -1,4 +1,4 @@
-#AK2-forsøk2,  main.tf - modul_loadbalancer
+#AK2  main.tf - modul_loadbalancer
 
 #https://dev.to/smallsun2025/deploy-azure-load-balancer-and-virtual-machines-using-terraform-4gpk
 #https://kndoni.medium.com/create-a-standard-load-balancer-in-azure-with-terraform-ee1da012b55e
@@ -19,7 +19,6 @@ resource "azurerm_lb" "LB" {
 # Backend pool
 resource "azurerm_lb_backend_address_pool" "bepool" {
     name                = var.bepool_namn
-    #resource_group_name = var.RG_namn
     loadbalancer_id     = azurerm_lb.LB.id
 }
 
@@ -28,15 +27,15 @@ resource "azurerm_lb_backend_address_pool" "bepool" {
 resource "azurerm_lb_probe" "probe" {
     name                = var.LB_probe_namn
     loadbalancer_id     = azurerm_lb.LB.id
-    protocol            = "Tcp"
+    protocol            = "Tcp"         # Prøvde med http her og men det gjekk ikkje ??? 
     port                = 80
-    #request_path        = "/health"  # Måtte kommentere vekk for at nettsida skulle vise i nettlesar, idk why
+    #request_path        = "/health"    # Måtte kommentere vekk for at nettsida skulle vise i nettlesar, idk why
+                                        # Prøvde og med berre "/"
 }
 
 # LB rule
 resource "azurerm_lb_rule" "LBrule" {
     name                            = var.LBrule_namn
-    #resource_group_name             = var.RG_namn
     loadbalancer_id                 = azurerm_lb.LB.id
     protocol                        = "Tcp"
     frontend_port                   = 80

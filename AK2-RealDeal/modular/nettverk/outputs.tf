@@ -1,4 +1,4 @@
-# AK2-forsøk2,  outputs.tf - modul_nettverk
+# AK2  outputs.tf - modul_nettverk
 
 
 output "vnet_id" {
@@ -7,7 +7,6 @@ output "vnet_id" {
 
 }
 
-# Når det opprettes VM'er kan du bruke   subnet_id = module.nettverk.subnet_ids["navn på subnet"]  for å hente første subnet
 output "subnet_ids" {
     value = {
         for subnet in azurerm_subnet.vnet1_subnet :

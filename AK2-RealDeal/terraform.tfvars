@@ -1,4 +1,4 @@
-# AK2 forsøk 2 - terraform.tfvars
+# AK2 - terraform.tfvars
 
 #
 RG_namn = "RG_AK2"
@@ -17,6 +17,8 @@ VM_namn = ["VM1", "VM2"]
 adm_user = "berelv"
 adm_passwd = "Admin123"
 
+IPconf_namn = "IPconf"
+
 #LB ting
 LB_namn = "AK2_LB"
 frontend_ip_conf = "FrontendIP"
@@ -25,12 +27,12 @@ bepool_namn = "BE_pool"
 LB_probe_namn = "http_probe"
 LBrule_namn = "LB_rule"
 
-IPconf_namn = "IPconf"
+
 
 #Net SG
 vnet1_SG = "AK2_SG"
 
-#ANSIBLE IP
+#ANSIBLE TING
 ansible_IP = "10.200.200.0/24"
 existing_vnet_name = "Net_Ansible"
 existing_RG_name = "RG_Ansible"

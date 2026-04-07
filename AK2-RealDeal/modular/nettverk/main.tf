@@ -1,4 +1,4 @@
-#AK2-forsøk2,  main.tf - modul_nettverk
+#AK2  main.tf - modul_nettverk
 
 #nettverket Ansible host er på
 data "azurerm_virtual_network" "Ansible_net" {
@@ -24,6 +24,8 @@ resource "azurerm_subnet" "vnet1_subnet" {
     resource_group_name     = var.RG_namn
 }
 
+
+# Kople det nye virtuelle nettverket til det som allereie eksistera (der ansible host er i dette tilfelle)
 resource "azurerm_virtual_network_peering" "new_to_existing" {
     name                            = "Peer-nettverka"
     resource_group_name             = var.RG_namn
@@ -32,6 +34,8 @@ resource "azurerm_virtual_network_peering" "new_to_existing" {
     allow_virtual_network_access    = true
 }
 
+# Kople det eksisterande virtuelle nettverket til det nye
+    # Trengte begge desse for at det skulle fungere ordentleg, når eg berre hadde eine gjekk det berre ein veg isj
 resource "azurerm_virtual_network_peering" "existing_to_new" {
     name = "PlisFunger"
     resource_group_name = var.existing_RG_name

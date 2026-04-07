@@ -1,5 +1,4 @@
-#AK2 forsøk 2 -  main.tf - root
-
+#AK2 -  main.tf - root
 
 # Ressursgruppe
 module "ressurs_gruppe" {
@@ -7,7 +6,7 @@ module "ressurs_gruppe" {
     RG_namn     = var.RG_namn
     lokasjon    = var.lokasjon
 }
-# Det funka!
+# Det funka! 
 
 # Nettverk
 module "nettverk" {
@@ -26,7 +25,6 @@ module "nettverk" {
     depends_on      = [module.ressurs_gruppe]
 }
 
-# funka så langt... skal prøve å legge til NICs
 module "NetSecurityGroup" {
     source = "./modular/nettverk-SG"
     RG_namn         = var.RG_namn

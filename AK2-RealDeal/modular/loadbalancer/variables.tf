@@ -1,4 +1,4 @@
-#AK2-forsøk2,  variables.tf - modul_loadbalancer
+#AK2 variables.tf - modul_loadbalancer
 
 
 variable "RG_namn" {

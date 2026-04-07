@@ -1,4 +1,4 @@
-#AK2 forsøk 2 - providers.tf
+#AK2  - providers.tf
 
 # Providers
 terraform {

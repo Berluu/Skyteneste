@@ -1,4 +1,3 @@
-# AK2 forsok 2
 # variables.tf - root
 
 #Subscription ID
@@ -8,7 +7,7 @@ variable "sub_id" {
     default     = "340ce909-e132-4535-abbd-21f5b5f772da"
 
 }
-
+ 
 variable "RG_namn" {
     description = "Namn på ressursgruppe"
     type        = string
@@ -47,7 +46,6 @@ variable "pubip_namn" {
     description = "Public IP addresse til last balanseren"
     type        = string
 }
-
 
 
 

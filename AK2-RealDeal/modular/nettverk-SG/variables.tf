@@ -1,4 +1,4 @@
-# AK2-forsøk2, variables.tf - modul_nettverk-SG
+# AK2 variables.tf - modul_nettverk-SG
 
 variable "RG_namn" {
     description = "Namn på ressursgruppe"
